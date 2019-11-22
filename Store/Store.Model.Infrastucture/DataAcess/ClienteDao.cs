@@ -83,8 +83,9 @@ namespace Store.Model.Infrastucture.DataAcess
         public Cliente Select(int id)
         {
             this.SqlBase();
-
             this.Sql.Append(" WHERE TB_CLIENTE.ID = @ID ");
+
+            this.AddParameter("@ID", id);
 
             return ConverObject();
         }
