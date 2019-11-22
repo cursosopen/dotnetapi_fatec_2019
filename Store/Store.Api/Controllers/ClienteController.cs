@@ -1,12 +1,8 @@
-﻿using Store.Api.Models;
+﻿using System;
+using System.Web.Http;
+using Store.Api.Models;
 using Store.BusinessLogic.BL.Interfaces;
 using Store.Model.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
 
 namespace Store.Api.Controllers
 {
@@ -17,7 +13,7 @@ namespace Store.Api.Controllers
 
         [HttpPost]
         public Cliente Inserir([FromBody] Cliente cliente) =>
-             throw new NotImplementedException();
+             this.BLInjected.Inserir(cliente);
 
         [HttpPut]
         [Authorize]
